@@ -1,0 +1,23 @@
+package main
+
+import "fmt"
+
+func ping(pings chan<- string, msg string) {
+	pings <- msg
+}
+
+func pong(pings <-chan string, pongs string) {
+	msg := <-pongs
+	pongs <- msg
+}
+
+func main() {
+
+	pings := make(chan string, 1)
+	pongs := make(chan string, 1)
+
+	ping(pings, "Hello")
+	pong(pings, pongs)
+	fmt.Print(<-pongs)
+
+}
