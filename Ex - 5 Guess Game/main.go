@@ -3,10 +3,14 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"time"
 )
 
 func rNum(max int) int {
-
+	
+	s1 := rand.NewSource(time.Now().UnixNano())
+	r1 := rand.New(s1)
+	return r1.Intn(max)
 	return rand.Intn(max)
 
 }
