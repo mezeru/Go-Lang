@@ -1,2 +1,2 @@
 # Go-Lang
-Repo for Go Lang Practice
+Repo for Practice Projects in Go Lang
