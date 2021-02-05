@@ -18,7 +18,7 @@ func main() {
 	defer response.Body.Close()
 
 	mydir, err := os.Getwd()
-	mydir = mydir + "/index.html"
+	mydir = mydir + "/index.txt"
 	f, err := os.Create(mydir)
 
 	fmt.Println("Response Status : ", response.Status)
